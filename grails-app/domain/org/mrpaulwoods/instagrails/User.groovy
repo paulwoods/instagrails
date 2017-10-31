@@ -14,7 +14,7 @@ class User {
 	Date dateCreated
 	Date lastUpdated
 
-    static constraints = {
+	static constraints = {
     }
 
 }

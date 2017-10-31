@@ -32,9 +32,11 @@
 
     			<g:form controller="comment" action="add" id="${post.id}">
     				<div class="form-group">
-    					<textarea class="form-controls"></textarea>
+    					<textarea autofocus="autofocus" class="form-control" name="comment">${commentCommand.comment}</textarea>
     				</div>
     				<input class="btn btn-primary btn-sm" type="submit" action="save"/>
+
+                    <input type="hidden" name="post.id" value="${commentCommand.post?.id}"/>
     			</g:form>
 
     			<br/>

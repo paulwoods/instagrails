@@ -9,7 +9,11 @@ class Post {
 	Date dateCreated
 	Date lastUpdated
 
-    static constraints = {
+	static mapping = {
+		comments sort: 'dateCreated', order: 'desc'
+	}
+
+	static constraints = {
     	text maxLength: 2000
     }
 

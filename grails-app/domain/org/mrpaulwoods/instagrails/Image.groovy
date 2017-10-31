@@ -11,7 +11,7 @@ class Image {
 	Date dateCreated
 	Date lastUpdated
 
-    static constraints = {
+	static constraints = {
     	content maxSize: 4194304
     	name maxSize: 300
     	contentType maxSize: 200

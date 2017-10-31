@@ -8,8 +8,8 @@ class Comment {
 	Date dateCreated
 	Date lastUpdated
 
-    static constraints = {
-    	text maxSize: 2000
+	static constraints = {
+    	text maxSize: 500
     }
 
 }
