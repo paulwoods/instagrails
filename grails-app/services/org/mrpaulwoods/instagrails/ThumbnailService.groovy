@@ -26,8 +26,6 @@ class ThumbnailService {
 	    assert post.save()
 
 	    image2
-
 	}
-
 
 }

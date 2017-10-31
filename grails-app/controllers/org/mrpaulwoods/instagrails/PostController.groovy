@@ -2,5 +2,8 @@ package org.mrpaulwoods.instagrails
 
 class PostController {
 
-    def index() { }
+    def show(Post post) { 
+    	[post: post]
+    }
+
 }

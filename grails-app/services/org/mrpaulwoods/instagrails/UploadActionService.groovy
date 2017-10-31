@@ -29,11 +29,11 @@ class UploadActionService {
 			user: user
 		)
 		post.addToImages image
+		assert post.save()
 
 		thumbnailService.execute post, image
 
 		post
-
 	}
 	
 }

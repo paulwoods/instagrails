@@ -3,7 +3,7 @@ package org.mrpaulwoods.instagrails
 class Post {
 
 	static belongsTo = [ user: User ]
-	static hasMany = [ images: Image ]
+	static hasMany = [ images: Image, comments: Comment ]
 
 	String text
 	Date dateCreated

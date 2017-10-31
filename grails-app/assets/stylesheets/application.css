@@ -14,3 +14,20 @@
 *= require_self
 */
 
+div.thumbnail {
+	display: inline-block;
+	padding: 2em;
+	margin: 2em;
+}
+
+body {
+  padding-top: 50px;
+}
+
+.comment .user {
+	font-weight: bolder;
+}
+
+.comment {
+	margin-bottom: 2em;
+}

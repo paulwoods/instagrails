@@ -6,6 +6,7 @@
         <g:if env="development"><asset:stylesheet src="errors.css"/></g:if>
     </head>
     <body>
+        <br/><br/>
         <ul class="errors">
             <li>Error: Page Not Found (404)</li>
             <li>Path: ${request.forwardURI}</li>
