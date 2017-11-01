@@ -1,10 +1,12 @@
 package org.mrpaulwoods.instagrails
 
 import grails.validation.Validateable
+import grails.plugin.springsecurity.annotation.Secured
 
+@Secured("ROLE_USER")
 class CommentController {
 
-    def securityService
+    def springSecurityService
 
     def add(CommentCommand cmd) {
     	if(cmd.hasErrors()) {
@@ -18,7 +20,7 @@ class CommentController {
     		return
     	}
 
-        User currentUser = securityService.currentUser
+        User currentUser = springSecurityService.currentUser
         
     	Comment comment = new Comment(
     		post: cmd.post,

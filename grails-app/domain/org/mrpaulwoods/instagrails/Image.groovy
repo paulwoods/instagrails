@@ -1,5 +1,8 @@
 package org.mrpaulwoods.instagrails
 
+import grails.compiler.GrailsCompileStatic
+
+@GrailsCompileStatic
 class Image {
 
 	static belongsTo = [ user: User, post: Post ]

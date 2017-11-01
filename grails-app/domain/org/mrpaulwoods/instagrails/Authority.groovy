@@ -1,13 +1,25 @@
 package org.mrpaulwoods.instagrails
 
-class Authority {
+import groovy.transform.EqualsAndHashCode
+import groovy.transform.ToString
+import grails.compiler.GrailsCompileStatic
 
-	static belongsTo = [ user: User ]
+@GrailsCompileStatic
+@EqualsAndHashCode(includes='authority')
+@ToString(includes='authority', includeNames=true, includePackage=false)
+class Authority implements Serializable {
 
+	private static final long serialVersionUID = 1
+
+	String authority
 	Date dateCreated
 	Date lastUpdated
 
-    static constraints = {
-    }
-    
+	static constraints = {
+		authority nullable: false, blank: false, unique: true
+	}
+
+	static mapping = {
+		cache true
+	}
 }

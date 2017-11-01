@@ -1,13 +1,14 @@
-
 package org.mrpaulwoods.instagrails
 
 import grails.validation.Validateable
 import org.springframework.web.multipart.MultipartFile
+import grails.plugin.springsecurity.annotation.Secured
 
+@Secured("ROLE_USER")
 class PostController {
 
 	def uploadActionService
-	def securityService
+	def springSecurityService
 
     def show(Post post) { 
     	[
@@ -22,7 +23,7 @@ class PostController {
 
     def save(CreatePostCommand cmd) {
 
- 		User user = securityService.currentUser
+ 		User user = springSecurityService.currentUser
 
  		Post post = uploadActionService.execute(
  			cmd.content.originalFilename,

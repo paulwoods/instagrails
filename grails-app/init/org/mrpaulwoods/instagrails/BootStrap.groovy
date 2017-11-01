@@ -9,7 +9,18 @@ class BootStrap {
 
 	def init = { servletContext ->
 
-		User user = securityService.register("mr.paul.woods@gmail.com", "11111")
+		User user = new User(
+			username: "mr.paul.woods@gmail.com",
+    		password: "123456")
+		assert user.save(flush: true)
+
+		Authority authority = new Authority(
+			authority: "ROLE_USER")
+		assert authority.save(flush: true)
+
+		UserAuthority.create user, authority
+
+
 
 		Post post1 = uploadActionService.execute(
 			"all code is guilty until proven innocent",

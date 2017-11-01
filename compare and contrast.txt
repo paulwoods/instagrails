@@ -1,0 +1,97 @@
+
+compare & contrast
+	spring boot mvc vs grails
+
+
+getting started (command line)
+	grails
+		- download grails.zip
+		- add to path
+		- grails create-app
+		- grails run-app
+		- browse to localhost:8080/
+
+	spring boot
+		- go to https://start.spring.io/
+		- choose options (including gradle project)
+		- generate project
+		- unzip
+		- gradlew bootRun
+		- browse to localhost:8080/
+			- wont work because no controllers defined
+
+
+hello world app
+	grails
+		- already includes a default screen for a new ap
+
+	spring boot
+		- must create a view
+			- create a home controller 
+			- create a home/index.html view
+
+
+domains
+	grails
+		- uses gorm for domain
+		- must be saved in the <app>/grails-app/domain/... folder
+		- use grails create-domain-class to create the class file
+
+	spring boot
+		- no default orm
+		- add spring-data as a dependency
+		- create domain objects as JPA Entity classes
+
+
+controllers
+	grails
+		- must be saved in the <app>/grails-app/controller/... folder
+		- user grails create-controller to create the class file
+		- url is based on class name. ex: ImageController =  /image
+		- url is also based on public methods: def index() {...} = /image/index
+
+	spring boot
+		- class must be annotated with the @Controller class
+		- class and methods may be annotated with @RequestMapping to assign the url to the method
+
+
+views
+	grails
+		- must be located in <app>/grails-app/views/... folder
+		- are groovy server pages - a templating library
+
+	spring boot
+		- optionally can use templates, like thymeleaf, velocity, freemarker
+		- location depends on template library, but usually <app>/src/main/resources/temlates/...
+
+
+services
+
+
+
+
+
+migrating
+	grails
+		- difficult. major releases and dot-releases tend to break existing code
+		- example: rest and tests
+		- but, you must your code on the latest grails release, else you will get stuck on a version, 
+			while grails keeps moving forward
+
+	spring boot
+		- no issues with dot-releases
+		- won't have its first major release (2.0) until later this year	
+
+transactions
+	grails
+		- unclear when data should be saved in the controller (not under transaction) vs saved in a service (under transaction)
+		- users have been known to add @Transactional to the controller because of this.
+
+	spring boot
+		- similar issue, but users are more likely to call a service bean to do the save (under transaction) 
+
+opinions
+	remember - grails is built on top of spring, so it has all of spring's advantages.
+	does the addition of grails on top of spring improve your apps development/runtime performance?
+
+

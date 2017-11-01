@@ -1,5 +1,8 @@
 package org.mrpaulwoods.instagrails
 
+import grails.compiler.GrailsCompileStatic
+
+@GrailsCompileStatic
 class Post {
 
 	static belongsTo = [ user: User ]

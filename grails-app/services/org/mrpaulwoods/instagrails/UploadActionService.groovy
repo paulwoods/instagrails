@@ -20,8 +20,7 @@ class UploadActionService {
 			text: text,
 			user: user
 		)
-		post.save()
-		assert post
+		assert post.save()
 
 		Image image = new Image(
 			name: filename,
