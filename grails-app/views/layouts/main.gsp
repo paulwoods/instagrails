@@ -43,6 +43,12 @@
                 <g:link controller="contact" action="index">Contact</g:link>
             </li>
           </ul>
+
+            <div class="navbar-form navbar-right">
+                <g:link class="btn btn-success" controller="post" action="create">Upload</g:link>
+            </div>
+
+
         </div><!--/.nav-collapse -->
       </div>
     </nav>

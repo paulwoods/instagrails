@@ -23,7 +23,7 @@ class ThumbnailService {
 	            user: image.user
 	    )
 	    post.addToImages image2
-	    assert post.save()
+	    assert post.save(flush: true)
 
 	    image2
 	}

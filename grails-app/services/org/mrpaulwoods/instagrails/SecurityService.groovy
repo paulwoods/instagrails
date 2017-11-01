@@ -17,5 +17,10 @@ class SecurityService {
 
     	user
     }
+    
+
+    User getCurrentUser() {
+    	User.get(1)
+    }
 
 }

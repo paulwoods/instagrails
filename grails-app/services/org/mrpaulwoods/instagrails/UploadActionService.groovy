@@ -14,6 +14,8 @@ class UploadActionService {
 		User user
 	) {
 
+		log.debug "uploadActionService {} {} {} {} {}", filename, contentType, content.size(), text, user
+
 		Post post = new Post(
 			text: text,
 			user: user
@@ -29,7 +31,8 @@ class UploadActionService {
 			user: user
 		)
 		post.addToImages image
-		assert post.save()
+
+		assert post.save(flush: true)
 
 		thumbnailService.execute post, image
 

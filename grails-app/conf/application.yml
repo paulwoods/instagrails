@@ -62,6 +62,13 @@ grails:
             xml:
               - text/xml
               - application/xml
+            gif:
+              - image/gif
+            jpeg:
+              - image/jpeg
+            png:
+              - image/png
+
     urlmapping:
         cache:
             maxsize: 1000
@@ -131,3 +138,10 @@ environments:
 
 server:
     contextPath: /instagrails
+
+---
+grails:
+    controllers:
+        upload:
+            maxFileSize: 16000000
+            maxRequestSize: 16000000

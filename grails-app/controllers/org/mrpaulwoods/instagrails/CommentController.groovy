@@ -4,6 +4,8 @@ import grails.validation.Validateable
 
 class CommentController {
 
+    def securityService
+
     def add(CommentCommand cmd) {
     	if(cmd.hasErrors()) {
 
@@ -16,10 +18,12 @@ class CommentController {
     		return
     	}
 
+        User currentUser = securityService.currentUser
+        
     	Comment comment = new Comment(
     		post: cmd.post,
     		text: cmd.comment,
-    		user: User.get(1) // TODO: 
+    		user: currentUser
     	)
 
     	assert comment.save()
